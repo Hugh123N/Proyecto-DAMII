@@ -25,11 +25,11 @@ class ProductosViewController: UIViewController, UITableViewDelegate, UITableVie
     func configureTableView() {
         tbProductos.delegate = self
         tbProductos.dataSource = self
-        tbProductos.register(UINib(nibName: "ListProductoTableViewCell", bundle: nil), forCellReuseIdentifier: "ListProductoTableViewCell")
+        tbProductos.register(UINib(nibName: "ListProductosTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
         tbProductos.rowHeight = 260
         tbProductos.showsVerticalScrollIndicator = false
         tbProductos.separatorStyle = .none
-    }
+    } 
     
     func fetchData() {
         let webService = "https://fakestoreapi.com/products"
@@ -40,8 +40,8 @@ class ProductosViewController: UIViewController, UITableViewDelegate, UITableVie
                 print("Error de conexión: \(String(describing: error?.localizedDescription))")
                 return
             }
-            do {
-                guard let dataJSON = data else { return } 
+            do { 
+                guard let dataJSON = data else { return }
                 self?.arrayProductos = try JSONDecoder().decode([Producto].self, from: dataJSON)
                 DispatchQueue.main.async {
                     print("Productos descargados: \(self?.arrayProductos.count ?? 0)")
@@ -58,12 +58,13 @@ class ProductosViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tbProductos.dequeueReusableCell(withIdentifier: "ListProductoTableViewCell", for: indexPath) as? ProductosTableViewCell else {
+        guard let celda = tbProductos.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as? ListProductosTableViewCell else {
             return UITableViewCell()
         }
+        
         let producto = arrayProductos[indexPath.row]
-        cell.configureView(product: producto)
-        return cell
+        celda.configureView(product: producto)
+        return celda
     }
 
 }
