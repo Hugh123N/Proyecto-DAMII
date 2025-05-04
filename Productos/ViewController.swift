@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             //invocar al segue "resumen"
             self.performSegue(withIdentifier: "TapBard", sender: nil)
         }))
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil) 
     }
     
 }
