@@ -12,7 +12,6 @@ class ListaProductosTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCategoria: UILabel!
     @IBOutlet weak var lblPrecio: UILabel!
     @IBOutlet weak var lblTitulo: UILabel!
-    @IBOutlet weak var lblDescripcion: UILabel!
     @IBOutlet weak var IvImagen: UIImageView!
     var idProducto:Int = 0
     weak var delegate: ListaProductosTableViewCellDelegate?
@@ -30,7 +29,6 @@ class ListaProductosTableViewCell: UITableViewCell {
         lblTitulo.text = producto.title
         lblPrecio.text = String(format: "S/. %.2f", producto.price)
         
-        lblDescripcion.text = producto.description
         lblCategoria.text = producto.category
         
         // Cargar imagen de internet
