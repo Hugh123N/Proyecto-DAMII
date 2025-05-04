@@ -1,20 +1,21 @@
 //
-//  ProductosTableViewCell.swift
+//  ListaProductosTableViewCell.swift
 //  Productos
 //
-//  Created by DAMII on 27/04/25.
+//  Created by DAMII on 4/05/25.
 //
 
-import UIKit 
+import UIKit
 
-class ListProductosTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var lblTitulo: UILabel!
-    
-    @IBOutlet weak var IvImagen: UIImageView!
-    @IBOutlet weak var lblDescripcion: UILabel!
+class ListaProductosTableViewCell: UITableViewCell {
+
     @IBOutlet weak var lblCategoria: UILabel!
     @IBOutlet weak var lblPrecio: UILabel!
+    @IBOutlet weak var lblTitulo: UILabel!
+    @IBOutlet weak var lblDescripcion: UILabel!
+    @IBOutlet weak var IvImagen: UIImageView!
+    var idProducto:Int = 0
+    weak var delegate: ListaProductosTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,13 +23,14 @@ class ListProductosTableViewCell: UITableViewCell {
         layer.cornerRadius = 10
         backgroundColor = UIColor.clear 
     }
-
+    
     func configureView(product:Producto?) {
         guard let producto = product else { return }
+        idProducto = producto.id
         lblTitulo.text = producto.title
         lblPrecio.text = String(format: "S/. %.2f", producto.price)
         
-        lblDescripcion.text = producto.description 
+        lblDescripcion.text = producto.description
         lblCategoria.text = producto.category
         
         // Cargar imagen de internet
@@ -48,5 +50,13 @@ class ListProductosTableViewCell: UITableViewCell {
                 self.IvImagen.image = UIImage(systemName: "image-asset") // imagen por defecto
             }
     }
-
+    
+    protocol ListaProductosTableViewCellDelegate: AnyObject {
+        func verDetalleProducto(idProducto: Int)
+    }
+    
+    @IBAction func btnVerDetalle(_ sender: Any) {
+        delegate?.verDetalleProducto(idProducto: idProducto)
+    }
+    
 }
