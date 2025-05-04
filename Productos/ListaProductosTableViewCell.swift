@@ -29,7 +29,7 @@ class ListaProductosTableViewCell: UITableViewCell {
         lblTitulo.text = producto.title
         lblPrecio.text = String(format: "S/. %.2f", producto.price)
         
-        lblCategoria.text = producto.category
+        lblCategoria.text = producto.category 
         
         // Cargar imagen de internet
             if let url = URL(string: producto.image) {

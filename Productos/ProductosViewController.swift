@@ -9,11 +9,14 @@ import UIKit
 
 class ProductosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ListaProductosTableViewCell.ListaProductosTableViewCellDelegate {
     func verDetalleProducto(idProducto: Int) {
-        //let detalleVC = ProductoDetalleController()
-          //      detalleVC.idProducto = idProducto
-            //    navigationController?.pushViewController(detalleVC, animated: true)
-        showAlert(message: "IdProducto es: \(idProducto) ")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let detalleVC = storyboard.instantiateViewController(withIdentifier: "DetalleController") as? DetalleController {
+            detalleVC.idProducto = idProducto
+            print("id: \(idProducto)")
+            navigationController?.pushViewController(detalleVC, animated: true)
+        }
     }
+
     
     
     var mail:String!
