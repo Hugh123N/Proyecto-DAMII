@@ -73,9 +73,9 @@ class DetalleController: UIViewController {
                             self.textPrice.text = "precio no encontrado"
                         }
                         if let categoria = jsonResponse?["category"] as? String {
-                            self.textPrice.text = categoria
+                            self.textCategoria.text = categoria
                         } else {
-                            self.textPrice.text = "precio no encontrado"
+                            self.textCategoria.text = "precio no encontrado"
                         }
                         if let imagenURLString = jsonResponse?["image"] as? String,
                             let imagenURL = URL(string: imagenURLString) {
