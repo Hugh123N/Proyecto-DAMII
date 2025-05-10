@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var txtPws: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!//holuu
     
     let predefinedUser = User(email: "admin", password: "admin")
     
