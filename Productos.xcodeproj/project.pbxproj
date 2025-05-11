@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B7D5E2C42DD01D1C002A6F2A /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E2C32DD01D1C002A6F2A /* CreateViewController.swift */; };
+		B7D5E30B2DD030AB002A6F2A /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E30A2DD030AB002A6F2A /* DeleteViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B71896162DB542BC000084A0 /* Productos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Productos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D5E2C32DD01D1C002A6F2A /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		B7D5E30A2DD030AB002A6F2A /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +52,8 @@
 		B718960D2DB542BC000084A0 = {
 			isa = PBXGroup;
 			children = (
+				B7D5E30A2DD030AB002A6F2A /* DeleteViewController.swift */,
+				B7D5E2C32DD01D1C002A6F2A /* CreateViewController.swift */,
 				B71896182DB542BC000084A0 /* Productos */,
 				B71896172DB542BC000084A0 /* Products */,
 			);
@@ -132,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D5E2C42DD01D1C002A6F2A /* CreateViewController.swift in Sources */,
+				B7D5E30B2DD030AB002A6F2A /* DeleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

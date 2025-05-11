@@ -31,7 +31,6 @@ class ListaProductosTableViewCell: UITableViewCell {
         
         lblCategoria.text = producto.category 
         
-        // Cargar imagen de internet
             if let url = URL(string: producto.image) {
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
@@ -40,21 +39,26 @@ class ListaProductosTableViewCell: UITableViewCell {
                         }
                     } else {
                         DispatchQueue.main.async {
-                            self.IvImagen.image = UIImage(systemName: "image-asset") // imagen por defecto si falla
+                            self.IvImagen.image = UIImage(systemName: "image-asset")
                         }
                     }
                 }
             } else {
-                self.IvImagen.image = UIImage(systemName: "image-asset") // imagen por defecto
+                self.IvImagen.image = UIImage(systemName: "image-asset")
             }
     }
     
     protocol ListaProductosTableViewCellDelegate: AnyObject {
         func verDetalleProducto(idProducto: Int)
+        func eliminarProducto(idProducto: Int)
     }
     
     @IBAction func btnVerDetalle(_ sender: Any) {
         delegate?.verDetalleProducto(idProducto: idProducto)
+    }
+    
+    @IBAction func btnEliminar(_ sender: Any) {
+        delegate?.eliminarProducto(idProducto: idProducto)
     }
     
 }

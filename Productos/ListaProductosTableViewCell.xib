@@ -52,7 +52,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SL-Fj-imB">
-                        <rect key="frame" x="10" y="152" width="390" height="34"/>
+                        <rect key="frame" x="10" y="152" width="191" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="tinted" title="Ver detalle"/>
@@ -64,6 +64,18 @@
                         <rect key="frame" x="10" y="24" width="107" height="107"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7e-0n-XbP">
+                        <rect key="frame" x="209" y="152" width="189" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="tinted" title="Eliminar">
+                            <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                            <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="btnEliminar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dug-J7-Qd0"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -76,4 +88,9 @@
             <point key="canvasLocation" x="196.94656488549617" y="42.95774647887324"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

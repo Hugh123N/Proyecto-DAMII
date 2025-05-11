@@ -8,6 +8,14 @@
 import UIKit
 
 class ProductosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ListaProductosTableViewCell.ListaProductosTableViewCellDelegate {
+    func eliminarProducto(idProducto: Int) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let deleteVC = storyboard.instantiateViewController(withIdentifier: "DeleteViewController") as? DeleteViewController {
+            deleteVC.idProducto = idProducto
+            navigationController?.pushViewController(deleteVC, animated: true)
+        }
+    }
+    
     func verDetalleProducto(idProducto: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detalleVC = storyboard.instantiateViewController(withIdentifier: "DetalleController") as? DetalleController {
